@@ -1,0 +1,29 @@
+{
+  "name": "Evolution API Simple",
+  "description": "Simplified Evolution API for GymBuddy WhatsApp integration",
+  "repository": "https://github.com/Stigmavlc/evolution-api-simple",
+  "logo": "https://cdn.jsdelivr.net/gh/EvolutionAPI/evolution-api@main/.github/image/whatsapp.svg",
+  "keywords": ["whatsapp", "api", "evolution", "gymbuddy", "nodejs"],
+  "stack": "heroku-24",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "PORT": {
+      "description": "Port for the app",
+      "value": "3000"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
