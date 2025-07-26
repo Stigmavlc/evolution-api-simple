@@ -1,0 +1,20 @@
+{
+  "name": "evolution-api-heroku",
+  "version": "1.0.0",
+  "description": "Evolution API for Heroku deployment",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.3",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
