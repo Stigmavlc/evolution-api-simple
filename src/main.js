@@ -206,7 +206,7 @@ app.post('/instance/connect/:id', async (req, res) => {
   
   try {
     // Generate a mock QR code for demo purposes
-    const qrData = \`whatsapp://connect/\${id}/\${Date.now()}\`;
+    const qrData = `whatsapp://connect/${id}/${Date.now()}`;
     const qrCode = await QRCode.toDataURL(qrData);
     
     instance.status = 'connecting';
@@ -245,7 +245,7 @@ app.get('/instance/list', (req, res) => {
 // Webhook endpoints
 app.post('/webhook/:instance', (req, res) => {
   const { instance } = req.params;
-  console.log(\`Webhook received for \${instance}:\`, req.body);
+  console.log(`Webhook received for ${instance}:`, req.body);
   res.json({ status: 'received' });
 });
 
@@ -254,7 +254,7 @@ app.post('/message/sendText/:instance', (req, res) => {
   const { instance } = req.params;
   const { number, textMessage } = req.body;
   
-  console.log(\`Sending message to \${number} via \${instance}: \${textMessage.text}\`);
+  console.log(`Sending message to ${number} via ${instance}: ${textMessage.text}`);
   
   res.json({
     status: 'success',
@@ -271,6 +271,6 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(\`🚀 Evolution API running on port \${PORT}\`);
-  console.log(\`📱 Manager: http://localhost:\${PORT}/manager\`);
+  console.log(`🚀 Evolution API running on port ${PORT}`);
+  console.log(`📱 Manager: http://localhost:${PORT}/manager`);
 });
